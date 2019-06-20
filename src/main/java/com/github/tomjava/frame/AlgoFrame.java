@@ -53,6 +53,7 @@ public class AlgoFrame extends JFrame {
         this(title, defaultWidth, defaultHeight);
     }
 
+    // todo: custom data
     private Circle[] circles;
     public void render(Circle[] circles){
         this.circles = circles;
