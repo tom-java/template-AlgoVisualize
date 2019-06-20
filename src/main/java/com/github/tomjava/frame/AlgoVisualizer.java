@@ -35,7 +35,8 @@ public class AlgoVisualizer {
         frame.addMouseListener(new AlgoMouseListener());
 
         while (true) {
-            frame.render(circles);
+            // todo: render data
+            //frame.render();
 
             Thread.sleep(10);
 

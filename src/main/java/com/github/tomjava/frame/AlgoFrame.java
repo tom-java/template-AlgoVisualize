@@ -53,10 +53,9 @@ public class AlgoFrame extends JFrame {
         this(title, defaultWidth, defaultHeight);
     }
 
-    // todo: custom data
-    private Circle[] circles;
-    public void render(Circle[] circles){
-        this.circles = circles;
+    private int[] moneyArray;
+    public void render(int[] moneyArray){
+        this.moneyArray = moneyArray;
 
         // refresh this canvas
         repaint();
@@ -78,37 +77,17 @@ public class AlgoFrame extends JFrame {
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
 
-            // draw an oval
-//            g.drawOval(100, 200, 50, 50);
-
-            // use new draw api
             Graphics2D g2D = (Graphics2D) g;
 
-            // reduce the aliased of edge
             RenderingHints hints = new RenderingHints(
                     RenderingHints.KEY_ANTIALIASING,
                     RenderingHints.VALUE_ANTIALIAS_ON);
             g2D.addRenderingHints(hints);
 
-            g2D.setColor(Color.RED);
+            g2D.setColor(AlgoVisHelper.Blue);
 
-            AlgoVisHelper.setStrokeWidth(g2D, 1);
+            // todo: use data to render our shapes
 
-//            Ellipse2D circle = new Ellipse2D.Double(100, 100, 300, 300);
-//            g2D.draw(circle);
-//            AlgoVisHelper.strokeCircle(g2D, 400, 400, 20);
-
-            // status will continue
-//            g2D.setColor(Color.RED);
-
-//            Ellipse2D circle2 = new Ellipse2D.Double(10, 10, 30, 30);
-//            g2D.fill(circle2);
-//            AlgoVisHelper.fillCircle(g2D, 100, 100, 80);
-
-
-            for (Circle circle : circles){
-                AlgoVisHelper.strokeCircle(g2D, circle.x, circle.y, circle.getRadius());
-            }
         }
 
         @Override
